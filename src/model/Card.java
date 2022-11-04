@@ -1,12 +1,13 @@
 package model;
-import imgs.*;
 import java.awt.*;
 
 /**
  * @author 教徒
  * Card: 游戏基本属性
 */
-public class Card {
+public class Card extends Component{
+    //继承是为了能使牌通过add的方法添加到当前窗口
+    //事件机制
     /**
      * name: 很关键
      * isGray
@@ -27,7 +28,34 @@ public class Card {
     private int width;
     private int height;
 
-    public String getName() {
+    public Card(String name){
+        this.name = name;
+
+        this.image=Toolkit.getDefaultToolkit().getImage("picture\\"+name+".png");
+        this.grayImage=Toolkit.getDefaultToolkit().getImage("picture\\"+name+".png");
+
+        this.isGray=false;
+
+        this.height=50;
+        this.width=50;
+
+        this.x=0;
+        this.y=0;
+    }
+
+    @Override
+    public void paint(Graphics g) {
+        if(this.isGray){
+            //灰色
+            g.drawImage(this.grayImage,this.x,this.y,null);
+
+        }else{
+            //正常
+            g.drawImage(this.image,this.x,this.y,null);
+        }
+    }
+
+   public String getName() {
         return name;
     }
 
@@ -35,10 +63,6 @@ public class Card {
 
     public void setName(String name) {
         this.name = name;
-        this.image=Toolkit.getDefaultToolkit().getImage("imgs\\"+name+".png");
-        this.grayImage=Toolkit.getDefaultToolkit().getImage("imgs\\"+name+".png");
-
-
     }
 
     public Boolean getGray() {
@@ -59,14 +83,14 @@ public class Card {
     }
 
     public Image getGaryImage() {
-        return garyImage;
+        return grayImage;
     }
 
     public void setGaryImage(Image garyImage) {
-        this.garyImage = garyImage;
+        this.grayImage = garyImage;
     }
 
-    public int getX() {
+/*    public int getX() {
         return x;
     }
 
@@ -96,5 +120,5 @@ public class Card {
 
     public void setHeight(int height) {
         this.height = height;
-    }
+    }*/
 }

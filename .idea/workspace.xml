@@ -1,21 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ab802fd0-a6e7-48de-94f5-53d37801fa8e" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameSheep.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/imgs/chilli.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/imgs/chocolate-Bar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/imgs/icecream.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/imgs/mooncake.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/imgs/walnut.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Card.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/Start.java" afterDir="false" />
+    <list default="true" id="ab802fd0-a6e7-48de-94f5-53d37801fa8e" name="变更" comment="sheep">
+      <change afterPath="$PROJECT_DIR$/picture/carota.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/picture/corn.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/picture/grass.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/picture/graycarota.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/picture/graycorn.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/picture/graygrass.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Start.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +51,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\111\桌面\JavaCode\GameSheep\imas" />
+      <recent name="D:\111\桌面\JavaCode\GameSheep\imgs" />
       <recent name="D:\111\桌面\JavaCode\GameSheep\src" />
     </key>
   </component>
@@ -70,8 +67,16 @@
       <workItem from="1667458692008" duration="1478000" />
       <workItem from="1667469410687" duration="25000" />
       <workItem from="1667470922352" duration="585000" />
-      <workItem from="1667548930989" duration="1877000" />
+      <workItem from="1667548930989" duration="4974000" />
     </task>
+    <task id="LOCAL-00001" summary="sheep">
+      <created>1667550862599</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1667550862599</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -90,5 +95,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="sheep" />
+    <option name="LAST_COMMIT_MESSAGE" value="sheep" />
   </component>
 </project>

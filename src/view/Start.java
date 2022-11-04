@@ -1,6 +1,8 @@
 package view;
 
 
+import model.*;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -10,6 +12,13 @@ import java.awt.*;
  * 游戏窗口初始化设置
  */
 public class Start extends JFrame {
+
+
+    private Card card=new Card("grass");
+
+
+
+
     public Start() throws HeadlessException {
 
         //title
@@ -21,6 +30,13 @@ public class Start extends JFrame {
         //居中
         this.setLocationRelativeTo(null);
         //可视
+
+
+        //添加组件的方法
+        //可以添加自定义的组件到当前窗口
+        this.getContentPane().add(card);
+
+
         this.setVisible(true);
     }
 
