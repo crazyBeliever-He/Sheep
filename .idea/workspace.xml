@@ -2,13 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab802fd0-a6e7-48de-94f5-53d37801fa8e" name="变更" comment="sheep">
-      <change afterPath="$PROJECT_DIR$/picture/carota.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/picture/corn.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/picture/grass.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/picture/graycarota.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/picture/graycorn.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/picture/graygrass.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/picture/carrot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/picture/carrot_gray.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/picture/corn_gray.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/picture/grass_gray.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/Cell.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/Layer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/picture/graycorn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/picture/graygrass.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Card.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Start.java" afterDir="false" />
     </list>
@@ -40,15 +42,19 @@
     <option name="showMembers" value="true" />
     <option name="sortByType" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "project.structure.last.edited": "项目",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "yiiguxing.plugin.translate"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\111\桌面\JavaCode\GameSheep\imas" />
@@ -67,7 +73,12 @@
       <workItem from="1667458692008" duration="1478000" />
       <workItem from="1667469410687" duration="25000" />
       <workItem from="1667470922352" duration="585000" />
-      <workItem from="1667548930989" duration="4974000" />
+      <workItem from="1667548930989" duration="5897000" />
+      <workItem from="1667564546411" duration="1210000" />
+      <workItem from="1667616367100" duration="623000" />
+      <workItem from="1667620606474" duration="773000" />
+      <workItem from="1667724808954" duration="3980000" />
+      <workItem from="1667885949592" duration="3719000" />
     </task>
     <task id="LOCAL-00001" summary="sheep">
       <created>1667550862599</created>
@@ -76,7 +87,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667550862599</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="sheep">
+      <created>1667563755523</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1667563755523</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -97,5 +115,9 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="sheep" />
     <option name="LAST_COMMIT_MESSAGE" value="sheep" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
