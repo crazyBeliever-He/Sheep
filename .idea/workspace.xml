@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ab802fd0-a6e7-48de-94f5-53d37801fa8e" name="变更" comment="sheep">
-      <change afterPath="$PROJECT_DIR$/src/model/EliminateBox.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Map.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/TestBuildLayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/TestBuildMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/TestColourLayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/TestColourMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tool/CardTool.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tool/LayerTool.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tool/MapTool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Cell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Layer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Layer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Start.java" afterDir="false" />
-    </list>
+    <list default="true" id="ab802fd0-a6e7-48de-94f5-53d37801fa8e" name="变更" comment="sheep" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,20 +30,20 @@
     <option name="showMembers" value="true" />
     <option name="sortByType" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/111/桌面/JavaCode/GameSheep",
-    "project.structure.last.edited": "项目",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "yiiguxing.plugin.translate"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/111/桌面/JavaCode/GameSheep&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;项目&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;yiiguxing.plugin.translate&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\111\桌面\JavaCode\GameSheep\imas" />
@@ -92,6 +77,7 @@
       <workItem from="1667911030053" duration="928000" />
       <workItem from="1667911980450" duration="5000" />
       <workItem from="1667912076656" duration="11682000" />
+      <workItem from="1667971275911" duration="556000" />
     </task>
     <task id="LOCAL-00001" summary="sheep">
       <created>1667550862599</created>
