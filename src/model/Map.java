@@ -30,7 +30,9 @@ public class Map {
     }
 
     /**
-     *  判断当前map中所有牌是否置灰
+     *  判断当前map中所有牌是否需要置灰
+     *  判断思路：
+     *  对每个非顶层的牌，依次判断上层是否有牌遮住他了
      *  性能非常差，牌越多速度越慢
      *  调用时间：
      *  1.游戏开始
@@ -39,12 +41,12 @@ public class Map {
     public void compareAll(){
 
         //i=0是最顶层layer，不需要判断
+        //遍历该层上面的所有层
         for (int i = 1; i <list.size() ; i++) {
             Layer layer=list.get(i);
-            layer.showCells();
             Cell[][] cells=layer.getCells();
-            System.out.println(list.size());
 
+            //遍历该层的Cell，判断是否有含牌的cell遮住了正在查找的card
             for (int row = 0; row < cells.length; row++) {
                 for(int column=0;column<cells[row].length;column++){
 
@@ -54,7 +56,7 @@ public class Map {
                         Card card=cell.getCard();
                         boolean result=MapTool.compare(card,layer.getParent());
 
-                        System.out.println(result);
+                        //写入该牌是否要置灰
                         card.setGray(result);
 
                     }

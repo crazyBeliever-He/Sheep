@@ -15,6 +15,10 @@ import java.awt.*;
  */
 public class Start extends JFrame {
 
+    public static void main(String[] args) {
+        new Start();
+    }
+
 
     public static Map map= MapTool.buildMap(2);
     public Start() throws HeadlessException {
@@ -28,6 +32,10 @@ public class Start extends JFrame {
         autoRefresh();
 
     }
+
+    /**
+     * 创建简单窗口
+     */
     public void creat(){
         //title
         this.setTitle("羊了个羊diy");
@@ -43,10 +51,20 @@ public class Start extends JFrame {
         //居中
         this.setLocationRelativeTo(null);
 
+        //绘制背景和消除框
+
+
+
+
+
+
         //可视
         this.setVisible(true);
     }
 
+    /**
+     * 绘制地图
+     */
     public void colourMap(){
         List<Layer> list=map.getList();
         for (int i = 0; i < list.size(); i++) {
@@ -55,6 +73,11 @@ public class Start extends JFrame {
         //置灰判定
         map.compareAll();
     }
+
+    /**
+     * 绘制地图需要的方法：绘制图层
+     * @param layer 需要绘制的图层
+     */
     private void colourLayer(Layer layer){
         //将cell添加到窗口中
         Cell[][] cells=layer.getCells();
@@ -63,16 +86,16 @@ public class Start extends JFrame {
 
                 Card card=cells[row][column].getCard();
 
-                //70是该层牌与牌之间的距离，offsetX是整层的偏移量
+                //50是该层牌与牌之间的距离，offsetX是整层的偏移量
                 int x=column*50+layer.getOffsetX();
                 int y=row*50+layer.getOffsetY();
                 card.setBounds(x,y,50,50);
 
+                //将牌放入窗口中
                 this.getContentPane().add(card);
             }
         }
     }
-
 
 
     /**
@@ -95,7 +118,4 @@ public class Start extends JFrame {
         }).start();
     }
 
-    public static void main(String[] args) {
-        new Start();
-    }
 }

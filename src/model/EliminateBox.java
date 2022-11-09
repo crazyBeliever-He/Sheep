@@ -19,7 +19,7 @@ public class EliminateBox {
     /**
      * 迭代器清空集合
      */
-    void deleteCardName(String name){
+    private void deleteCardName(String name){
         Iterator<Card> iterator=slot.iterator();
         while(iterator.hasNext()){
             Card next=iterator.next();
@@ -61,7 +61,7 @@ public class EliminateBox {
     /**
      * 将牌绘制到消除框
      */
-    void paint(){
+    private void paint(){
         for (int i = 0; i < slot.size(); i++) {
             Card card=slot.get(i);
 
