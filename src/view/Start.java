@@ -3,12 +3,9 @@ package view;
 
 import model.*;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
+
 
 /**
  * @author 教徒
@@ -27,22 +24,18 @@ public class Start extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //居中
         this.setLocationRelativeTo(null);
-
-        this.setVisible(true);
-
-        Card card=new Card("grass");
-        card.setGray(true);
-
+        //可视
+        //this.setVisible(true);
 
         //添加组件的方法
         //可以添加自定义的组件到当前窗口
         //添加图片
-        this.getContentPane().add(card);
-        //可视
+
+
 
         //自动刷新线程
         autoRefresh();
-       // this.setVisible(true);
+        this.setVisible(true);
 
     }
 
@@ -51,6 +44,7 @@ public class Start extends JFrame {
      */
     private void autoRefresh(){
         Start start=this;
+        //noinspection AlibabaAvoidManuallyCreateThread
         new Thread(new Runnable(){
             public void run(){
                 while(true){

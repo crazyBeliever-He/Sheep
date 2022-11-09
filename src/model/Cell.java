@@ -2,10 +2,11 @@ package model;
 
 /**
  * 单元格
- * 两种状态，有牌，无牌
+ * state 两种状态，有牌true，无牌false
+ * @author 教徒
  */
 public class Cell {
-    private boolean state;
+    private boolean state=false;
     private Card card;
 
     public boolean isState() {

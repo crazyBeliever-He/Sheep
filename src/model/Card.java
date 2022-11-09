@@ -1,4 +1,8 @@
 package model;
+
+
+// test.TestColourMap;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
@@ -31,6 +35,10 @@ public class Card extends JComponent {
     private Integer width;
     private Integer height;
 
+    private Cell cell;
+
+    EliminateBox eliminateBox=new EliminateBox();
+
     public Card(String name){
         this.name = name;
 
@@ -42,6 +50,8 @@ public class Card extends JComponent {
         this.height=50;
         this.width=50;
 
+
+
         this.x=0;
         this.y=0;
 
@@ -52,18 +62,39 @@ public class Card extends JComponent {
             @Override
             public void mouseClicked(MouseEvent e) {
                 //super.mouseClicked(e);
-                System.out.println("card.mousclicked;");
+                //System.out.println("mouseClicked");
 
                 Card card=(Card)e.getSource();//获取当前组件
 
-                card.getParent().remove(card);//调用上层容器删除自己。通过父容器删掉自己（一般树形使用这样的方式）
+                if(card.getGray()){
+                    //灰色
+                    return;
+                }else{
+                    //通过parent.remove只是在窗口中删除了该card对象
+                    //但是cell中状态state和card并没有删除
+                    //card.getParent().remove(card);//调用上层容器删除自己。通过父容器删掉自己（一般树形使用这样的方式）
+
+                    //删除牌-> 将牌移动到消除框
+                    eliminateBox.addSlot(card);
+
+
+                    //解决问题：既要删除UI中的组件，也要删除数据模型中的数据和对应状态
+                    cell.setState(false);
+                    cell.setCard(null);
+
+
+                    //这里需要 重新判定 整个Map中 哪些牌 需要 置灰
+                    test.TestColourMap.map.compareAll();
+                    //暂时将map设置为静态变量，然后通过包名+类名访问
+                }
+
             }
         });
     }
 
     @Override
     public void paint(Graphics g) {
-        if(!this.isGray){
+        if(this.isGray){
             //灰色
             g.drawImage(this.grayImage,this.x,this.y,null);
         }else{
@@ -71,6 +102,15 @@ public class Card extends JComponent {
             g.drawImage(this.image,this.x,this.y,null);
         }
     }
+
+    public Cell getCell() {
+        return cell;
+    }
+
+    public void setCell(Cell cell) {
+        this.cell = cell;
+    }
+
     @Override
    public String getName() {
         return name;
