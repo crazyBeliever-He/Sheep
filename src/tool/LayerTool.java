@@ -18,9 +18,9 @@ public class LayerTool {
         }catch(Exception e){
             e.printStackTrace();
         }
+
+
         assert layer != null;
-
-
         Card[] cards= CardTool.buildCards(layer.getLargestNumber());
         /*
             向图层里面的最小单元中装填卡牌
@@ -34,12 +34,11 @@ public class LayerTool {
         for (int row = 0; row < cells.length; row++) {
             for(int column=0;column<cells[row].length;column++){
 
-
                 Card card1=cards[flag++];
 
                 Cell cell=new Cell();
                 cell.setState(true);
-                //这个set让党员个对象找到牌
+                //这个set让单元格对象找到牌
                 cell.setCard(card1);
 
                 //这句set能让牌访问他的单元格

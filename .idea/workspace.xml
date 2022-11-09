@@ -2,7 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab802fd0-a6e7-48de-94f5-53d37801fa8e" name="变更" comment="sheep">
+      <change afterPath="$PROJECT_DIR$/src/test/Test2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/EliminateBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/EliminateBox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/TestColourMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/TestColourMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tool/LayerTool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool/LayerTool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tool/MapTool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool/MapTool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Start.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +89,7 @@
       <workItem from="1667912076656" duration="11682000" />
       <workItem from="1667971275911" duration="735000" />
       <workItem from="1667972117959" duration="68000" />
+      <workItem from="1667973525533" duration="9070000" />
     </task>
     <task id="LOCAL-00001" summary="sheep">
       <created>1667550862599</created>

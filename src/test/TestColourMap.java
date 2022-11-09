@@ -3,6 +3,7 @@ package test;
 
 import model.*;
 import tool.*;
+
 import javax.swing.*;
 import java.util.List;
 
@@ -17,7 +18,7 @@ public class TestColourMap extends JFrame {
 
         public static Map map= MapTool.buildMap(2);
 
-        private Layer layer= LayerTool.buildLayer(3,3);
+       // private Layer layer= LayerTool.buildLayer(3,3);
 
         public TestColourMap(){
 
@@ -42,7 +43,6 @@ public class TestColourMap extends JFrame {
         private void colourLayer(Layer layer){
                 //将cell添加到窗口中
                 Cell[][] cells=layer.getCells();
-                layer.showCells();
                 for (int row = 0; row < cells.length; row++) {
                         for(int column=0;column<cells[row].length;column++){
 
@@ -55,7 +55,6 @@ public class TestColourMap extends JFrame {
 
                                 this.getContentPane().add(card);
                         }
-                        System.out.println();
                 }
         }
 
@@ -98,6 +97,5 @@ public class TestColourMap extends JFrame {
                 new TestColourMap();
 
         }
-
 
 }

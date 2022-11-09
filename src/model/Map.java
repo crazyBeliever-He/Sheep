@@ -41,7 +41,9 @@ public class Map {
         //i=0是最顶层layer，不需要判断
         for (int i = 1; i <list.size() ; i++) {
             Layer layer=list.get(i);
+            layer.showCells();
             Cell[][] cells=layer.getCells();
+            System.out.println(list.size());
 
             for (int row = 0; row < cells.length; row++) {
                 for(int column=0;column<cells[row].length;column++){
@@ -52,7 +54,9 @@ public class Map {
                         Card card=cell.getCard();
                         boolean result=MapTool.compare(card,layer.getParent());
 
+                        System.out.println(result);
                         card.setGray(result);
+
                     }
                 }
 

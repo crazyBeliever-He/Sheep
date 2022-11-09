@@ -55,6 +55,7 @@ public class EliminateBox {
         }
         paint();
         gameOver(card);
+
     }
 
     /**

@@ -61,8 +61,6 @@ public class Card extends JComponent {
         this.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                //super.mouseClicked(e);
-                //System.out.println("mouseClicked");
 
                 Card card=(Card)e.getSource();//获取当前组件
 
@@ -84,8 +82,9 @@ public class Card extends JComponent {
 
 
                     //这里需要 重新判定 整个Map中 哪些牌 需要 置灰
-                    test.TestColourMap.map.compareAll();
+                    view.Start.map.compareAll();
                     //暂时将map设置为静态变量，然后通过包名+类名访问
+
                 }
 
             }

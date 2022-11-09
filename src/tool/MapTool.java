@@ -21,20 +21,19 @@ public class MapTool {
          */
         Layer layer1 = LayerTool.buildLayer(3,3);
         Layer layer2 = LayerTool.buildLayer(3,3);
-        //Layer layer3 = LayerTool.buildLayer(3,3);
 
         //构建图层的链式关系,第一层的parent默认为空，等价于，parent为空，说明已经到顶层，循环/递归结束
-      //  layer3.setParent(layer2);
+
         layer2.setParent(layer1);
         layer1.setParent(null);
 
         layer1.setOffsetX(40);
         layer2.setOffsetX(20);
-       // layer3.setOffsetX(10);
+
 
         map.getList().add(layer1);
         map.getList().add(layer2);
-       // map.getList().add(layer3);
+
 
         return map;
     }
@@ -53,9 +52,7 @@ public class MapTool {
                 Cell cell=cells[row][column];
                 if(cell.isState()){
                     //单元格有牌，需要比较
-                    /*
-                        temp 上级图层中的牌的属性; rect 当前牌属性; result 遮盖判定
-                     */
+                    //temp 上级图层中的牌的属性; rect 当前牌属性; result 遮盖判定
                     Rectangle temp=cell.getCard().getBounds();
                     Rectangle rect=card.getBounds();
                     boolean result=rect.intersects(temp);
