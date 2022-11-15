@@ -10,13 +10,13 @@ import java.util.Random;
 public class Layer {
 
     /**
-     *   偏移量的设置
+     *   图层偏移量的设置
      */
     private int offsetX;
     private int offsetY;
 
     /**
-    行列
+     行列数
      */
     private int rowNumber;
     private int columnNumber;
@@ -26,6 +26,7 @@ public class Layer {
      * 当前牌数 牌添加和减少时需要修改该值
      * */
     private int largestNumber;
+
     private int preNumber;
 
     /**
@@ -35,8 +36,9 @@ public class Layer {
 
     /**
      * 图层主体
+     * 每个cell中都有可能装着一个Card
      */
-    private Cell[][] cells=null;
+    private Cell[][] cells;
 
     public Layer(int rowNum,int columnNum)throws Exception{
         this.rowNumber=rowNum;

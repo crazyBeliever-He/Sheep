@@ -15,18 +15,28 @@ import java.awt.*;
  */
 public class Start extends JFrame {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         new Start();
     }
 
 
     public static Map map= MapTool.buildMap(2);
-    public Start() throws HeadlessException {
+    public Start() throws HeadlessException, InterruptedException {
         //1.初始化窗口的基本信息
         creat();
 
         //2.渲染地图
         colourMap();
+
+        //后加载的图片显示在下面
+
+        //绘制背景和消除框
+        Card background=new Card("background");
+        Card eliminateBox=new Card("eliminateBox");
+        background.setBounds(0,0,450,800);
+        eliminateBox.setBounds(0,575,450,800);
+        this.getContentPane().add(eliminateBox);
+        this.getContentPane().add(background);
 
         //3.自动刷新
         autoRefresh();
@@ -50,13 +60,6 @@ public class Start extends JFrame {
 
         //居中
         this.setLocationRelativeTo(null);
-
-        //绘制背景和消除框
-
-
-
-
-
 
         //可视
         this.setVisible(true);
@@ -105,6 +108,7 @@ public class Start extends JFrame {
         Start start=this;
         //noinspection AlibabaAvoidManuallyCreateThread
         new Thread(new Runnable(){
+            @Override
             public void run(){
                 while(true){
                     start.repaint();
@@ -117,5 +121,4 @@ public class Start extends JFrame {
             }
         }).start();
     }
-
 }

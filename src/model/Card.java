@@ -1,8 +1,5 @@
 package model;
 
-
-// test.TestColourMap;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
@@ -39,6 +36,9 @@ public class Card extends JComponent {
 
     EliminateBox eliminateBox=new EliminateBox();
 
+
+    private String bj="background";
+    private String eb="eliminateBox";
     public Card(String name){
         this.name = name;
 
@@ -64,8 +64,9 @@ public class Card extends JComponent {
 
                 Card card=(Card)e.getSource();//获取当前组件
 
-                if(card.getGray()){
+                if(card.getGray()|| bj.equals(card.getName()) ||eb.equals(card.getName())){
                     //灰色,什么都不做
+                    //点到背景，消除框，消除框里面的图片也是什么都不做
                     return;
                 }else{
                     //问题:通过parent.remove只是在窗口中删除了该card对象,但是cell中状态state和card并没有删除
