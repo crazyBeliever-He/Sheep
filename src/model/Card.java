@@ -6,8 +6,8 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 /**
+ * Card: 游戏基本数据形式
  * @author 教徒
- * Card: 游戏基本属性
 */
 public class Card extends JComponent {
     //继承是为了能使牌通过add的方法添加到当前窗口
@@ -22,7 +22,6 @@ public class Card extends JComponent {
     private Boolean isGray;
     private Image image;
     private Image grayImage;
-
     /**
      * x,y,牌在框体中位置
      * width,height牌的长宽
@@ -50,11 +49,8 @@ public class Card extends JComponent {
         this.height=50;
         this.width=50;
 
-
-
         this.x=0;
         this.y=0;
-
         /*
           鼠标事件监听，然后做出相应的动作
          */
@@ -66,29 +62,34 @@ public class Card extends JComponent {
 
                 if(card.getGray()|| bj.equals(card.getName()) ||eb.equals(card.getName())){
                     //灰色,什么都不做
-                    //点到背景，消除框，消除框里面的图片也是什么都不做
+                    //点到背景，消除框也是什么都不做
                     return;
                 }else{
                     //问题:通过parent.remove只是在窗口中删除了该card对象,但是cell中状态state和card并没有删除
                     //card.getParent().remove(card);//调用上层容器删除自己。通过父容器删掉自己（一般树形使用这样的方式）
 
                     //删除牌-> 将牌移动到消除框
+                    //很多限制条件在消除框中执行
                     eliminateBox.addSlot(card);
-
-
                     //解决问题：既要删除UI中的组件，也要删除数据模型中的数据和对应状态
                     //所以在card类中添加了新的属性：cell，内容是包含了自身的哪个cell
                     cell.setState(false);
                     cell.setCard(null);
 
-                    //这里需要 重新判定 整个Map中 哪些牌 需要 置灰
-                    // 暂时将map设置为静态变量，然后通过包名+类名访问
+                    //这里需要 重新判定 整个Map中 哪些牌 需要 置灰;暂时将map设置为静态变量，然后通过包名+类名访问
                     view.Start.map.compareAll();
+
+                    //检查是否赢了
+                    view.Start.map.ifWin();
                 }
             }
         });
     }
 
+    /**
+     * 生成的卡牌要被绘制成什么颜色
+     * @param g  the <code>Graphics</code> context in which to paint
+     */
     @Override
     public void paint(Graphics g) {
         if(this.isGray){

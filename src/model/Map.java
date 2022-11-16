@@ -1,39 +1,28 @@
 package model;
 
-import tool.MapTool;
-
+import javax.swing.*;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 功能：一个地图下面有多个图层，层层遮盖
+ * 地图类，有多个图层
+ * <p>
+ * 附带游戏胜利的判断方法和置灰的判断
  * @author 教徒
  */
 public class Map {
     private int levels;
     private List<Layer> list=new ArrayList<>();
 
-    public int getLevels() {
-        return levels;
-    }
-
-    public void setLevels(int levels) {
-        this.levels = levels;
-    }
-
-    public List<Layer> getList() {
-        return list;
-    }
-
-    public void setList(ArrayList<Layer> list) {
-        this.list = list;
-    }
-
     /**
+     *  方法compareAll的作用：
      *  判断当前map中所有牌是否需要置灰
+     * <p>
      *  判断思路：
      *  对每个非顶层的牌，依次判断上层是否有牌遮住他了
      *  性能非常差，牌越多速度越慢
+     *  <p>
      *  调用时间：
      *  1.游戏开始
      *  2.牌被点击后
@@ -54,16 +43,102 @@ public class Map {
                     if(cell.isState()){
                         //该空间有牌，需要判定
                         Card card=cell.getCard();
-                        boolean result=MapTool.compare(card,layer.getParent());
+                        boolean result= compare(card,layer.getParent());
 
                         //写入该牌是否要置灰
                         card.setGray(result);
 
                     }
                 }
-
             }
 
         }
+    }
+
+    /**
+     *
+     * @param card 被检查的牌
+     * @param layer 被检查的牌的所在层的上面的某一层
+     * @return 是否被该层遮盖
+     */
+    public  boolean compare(Card card, Layer layer){
+
+        Cell[][] cells=layer.getCells();
+        for (int row = 0; row < cells.length; row++) {
+            for(int column=0;column<cells[row].length;column++){
+
+                //如果当前牌单元格为空，不用比较
+                Cell cell=cells[row][column];
+                if(cell.isState()){
+                    //单元格有牌，需要比较
+                    //temp 上级图层中的牌的属性; rect 当前牌属性; result 遮盖判定
+                    Rectangle temp=cell.getCard().getBounds();
+                    Rectangle rect=card.getBounds();
+                    boolean result=rect.intersects(temp);
+
+                    if(result){
+                        //有交集，当前牌被盖住了.return结束整个判定
+                        return true;
+                    }
+
+                }
+            }
+        }
+        //到这里意味当前牌和该图层无交集，应该去更高层进行比较判断
+        if(layer.getParent()!=null){
+            return compare(card,layer.getParent());
+        }else{
+            //如果parent为空，说明完全没有遮盖，该牌显示正常
+            return false;
+        }
+    }
+
+    /**
+     * 判断游戏是否赢了
+     */
+    public void ifWin(){
+        if(view.Start.map.isEmpty()){
+            JOptionPane.showMessageDialog(null,"游戏结束,你赢了！");
+            System.exit(0);
+        }
+    }
+
+    /**
+     * 检查map中是否还有牌
+     */
+    public boolean isEmpty(){
+
+        for(int i=0;i<this.list.size();i++){
+            if(!this.list.get(i).isEmpty()){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * 输出cell状态用的（是否有牌
+     */
+    public void state(){
+        for(int i=0;i<this.list.size();i++){
+            this.list.get(i).state();
+            System.out.println();
+        }
+    }
+
+    public int getLevels() {
+        return levels;
+    }
+
+    public void setLevels(int levels) {
+        this.levels = levels;
+    }
+
+    public List<Layer> getList() {
+        return list;
+    }
+
+    public void setList(ArrayList<Layer> list) {
+        this.list = list;
     }
 }

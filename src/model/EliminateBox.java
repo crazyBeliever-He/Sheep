@@ -7,7 +7,9 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
- * 功能: 消除区域
+ * 功能: 消除区域，
+ * <p>
+ * 判定游戏失败的地方
  * @author 教徒
  */
 public class EliminateBox {
@@ -30,38 +32,32 @@ public class EliminateBox {
 
         slot.add(card);
 
+        //吞掉作用在消除框中卡牌上的鼠标点击事件->消除区域框里图形无法点击
         MouseListener[] mouseListeners = card.getMouseListeners();
-        //消除区域框里图形无法点击
         if (mouseListeners!=null){
             for (MouseListener mouseListener : mouseListeners) {
                 card.removeMouseListener(mouseListener);
             }
         }
 
-
-
         //牌的排序
         slot.sort(Comparator.comparing(Card::getName));
 
-        //获取牌的名称,根据牌的名字进行消除，方法：
-        // 获取牌的名字及所有同名牌对象，牌名为Map的键，同名牌对象存在list中作为对应值
+        //获取牌的名称,根据牌的名字进行消除，方法：获取牌的名字及所有同名牌对象，牌名为Map的键，同名牌对象存在list中作为对应值
         Map<String,List<Card>> map=slot.stream().collect(Collectors.groupingBy(Card::getName));
-
-        //获取Map的键值，然后遍历寻找是否有够三个的同名集合，有就用迭代器除去
+        //获取Map的键值，然后遍历寻找是否有够三个的同名集合，有就用迭代器清除slot中所有的同名对象
         Set<String> key=map.keySet();
         for(String s:key){
             List<Card> cards=map.get(s);
             if(cards.size()==3){
-                //用迭代器清空集合，清空的是slot中所有的同名对象
                 deleteCardName(s);
                 break;
             }
         }
         //每次加牌后都要重绘以及判断是否游戏失败/成功
-        //游戏成功的判断还没写
         paint();
+        //判断游戏是否失败（判断游戏是否成功写在了Map中，在Card的鼠标点击中执行）
         gameOver(card);
-
     }
 
     /**
@@ -98,7 +94,7 @@ public class EliminateBox {
      */
     private void gameOver(Card card){
         if(slot.size()>=SEVEN){
-            JOptionPane.showMessageDialog(card,"游戏结束,你输了！");
+            JOptionPane.showMessageDialog(null,"游戏结束,你输了！");
             System.exit(0);
         }
 

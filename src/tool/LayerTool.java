@@ -6,7 +6,7 @@ import model.Cell;
 import model.Layer;
 
 /**
- * 创建图层
+ * 唯一功能：创建图层
  * @author 教徒
  */
 public class LayerTool {
@@ -18,9 +18,8 @@ public class LayerTool {
         }catch(Exception e){
             e.printStackTrace();
         }
-
-
         assert layer != null;
+        //准备好需要装填的卡牌
         Card[] cards= CardTool.buildCards(layer.getLargestNumber());
         /*
             向图层里面的最小单元中装填卡牌
@@ -28,7 +27,6 @@ public class LayerTool {
             # # #
             # # #
          */
-
         Cell[][] cells=layer.getCells();
         int flag=0;
         for (int row = 0; row < cells.length; row++) {
@@ -38,6 +36,7 @@ public class LayerTool {
 
                 Cell cell=new Cell();
                 cell.setState(true);
+
                 //这个set让单元格对象找到牌
                 cell.setCard(card1);
 

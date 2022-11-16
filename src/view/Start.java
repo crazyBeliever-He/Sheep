@@ -15,28 +15,26 @@ import java.awt.*;
  */
 public class Start extends JFrame {
 
+    /**
+     * 每局游戏的入口
+     * @param args
+     * @throws InterruptedException
+     */
     public static void main(String[] args) throws InterruptedException {
         new Start();
     }
 
 
-    public static Map map= MapTool.buildMap(2);
+    /**
+     * 这里更改地图数据（难度）
+     */
+    public static Map map= MapTool.buildMap(3);
     public Start() throws HeadlessException, InterruptedException {
         //1.初始化窗口的基本信息
         creat();
 
-        //2.渲染地图
+        //2.绘制卡片
         colourMap();
-
-        //后加载的图片显示在下面
-
-        //绘制背景和消除框
-        Card background=new Card("background");
-        Card eliminateBox=new Card("eliminateBox");
-        background.setBounds(0,0,450,800);
-        eliminateBox.setBounds(0,575,450,800);
-        this.getContentPane().add(eliminateBox);
-        this.getContentPane().add(background);
 
         //3.自动刷新
         autoRefresh();
@@ -75,6 +73,14 @@ public class Start extends JFrame {
         }
         //置灰判定
         map.compareAll();
+
+        //绘制背景和消除框，后加载的图片显示在下面
+        Card background=new Card("background");
+        Card eliminateBox=new Card("eliminateBox");
+        background.setBounds(0,0,450,800);
+        eliminateBox.setBounds(0,575,450,800);
+        this.getContentPane().add(eliminateBox);
+        this.getContentPane().add(background);
     }
 
     /**

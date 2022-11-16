@@ -6,7 +6,7 @@ import java.util.Random;
 
 /**
  * @author 教徒
- * 创建随机的card数组
+ * 唯一功能：创建随机的card数组
  */
 public class CardTool {
     static Random random=new Random();

@@ -3,8 +3,9 @@ package model;
 import java.util.Random;
 
 /**
- * 图层类
- * 二维表格
+ * 图层类，构造方法中能设置该层的卡牌数量
+ * <p>
+ * 每层的偏移量在这里随机生成
  * @author 教徒
  */
 public class Layer {
@@ -57,14 +58,9 @@ public class Layer {
         this.offsetY=new Random().nextInt(50);
     }
 
-    public Layer getParent() {
-        return parent;
-    }
-
-    public void setParent(Layer parent) {
-        this.parent = parent;
-    }
-
+    /**
+     * 输出该层卡牌数据
+     */
     public void showCells(){
         for (int row = 0; row < cells.length; row++) {
             for(int column=0;column<cells[row].length;column++){
@@ -76,58 +72,86 @@ public class Layer {
         }
     }
 
+    /**
+     *  检查该层是否有牌
+     */
+    public boolean isEmpty(){
+
+        Cell[][] cells =this.getCells();
+
+        for(int i = 0; i< this.getRowNumber(); i++){
+            for(int j = 0; j< this.getColumnNumber(); j++) {
+                if(cells[i][j].isState()){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    /**
+     * 输出cell状态用的（是否有牌
+     */
+    public void state(){
+
+        Cell[][] cells =this.getCells();
+
+        for(int i = 0; i< this.getRowNumber(); i++){
+            for(int j = 0; j< this.getColumnNumber(); j++) {
+                System.out.print(cells[i][j].isState());
+                }
+            System.out.println();
+            }
+    }
+
+
+
+
+    public Layer getParent() {
+        return parent;
+    }
+    public void setParent(Layer parent) {
+        this.parent = parent;
+    }
     public int getOffsetY() {
         return offsetY;
     }
-
     public void setOffsetY(int offsetY) {
         this.offsetY = offsetY;
     }
-
     public int getOffsetX() {
         return offsetX;
     }
-
     public void setOffsetX(int offsetX) {
         this.offsetX = offsetX;
     }
-
     public int getRowNumber() {
         return rowNumber;
     }
-
     public void setRowNumber(int rowNumber) {
         this.rowNumber = rowNumber;
     }
-
     public int getColumnNumber() {
         return columnNumber;
     }
-
     public void setColumnNumber(int columnNumber) {
         this.columnNumber = columnNumber;
     }
-
     public int getLargestNumber() {
         return largestNumber;
     }
-
     public void setLargestNumber(int largestNumber) {
         this.largestNumber = largestNumber;
     }
-
     public int getPreNumber() {
         return preNumber;
     }
-
     public void setPreNumber(int preNumber) {
         this.preNumber = preNumber;
     }
-
     public Cell[][] getCells() {
         return cells;
     }
-
     public void setCells(Cell[][] cells) {
         this.cells = cells;
     }
