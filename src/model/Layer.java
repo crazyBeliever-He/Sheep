@@ -66,7 +66,12 @@ public class Layer {
             for(int column=0;column<cells[row].length;column++){
 
                 Card card=cells[row][column].getCard();
-                System.out.print(card.getName()+" ");
+                if(card!=null){
+                    System.out.print(card.getName()+" ");
+                }else{
+                    System.out.print("NULL ");
+                }
+
             }
             System.out.println();
         }

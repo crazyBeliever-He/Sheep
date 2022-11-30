@@ -9,11 +9,15 @@ import java.util.List;
  * 地图类，有多个图层
  * <p>
  * 附带游戏胜利的判断方法和置灰的判断
+ * <p>
+ * 在创建一个Map对象时，各种卡牌数据就已经生成了
  * @author 教徒
  */
 public class Map {
     private int levels;
     private List<Layer> list=new ArrayList<>();
+
+    public static EliminateBox eliminateBox=new EliminateBox();
 
     /**
      *  方法compareAll的作用：
@@ -108,8 +112,8 @@ public class Map {
      */
     public boolean isEmpty(){
 
-        for(int i=0;i<this.list.size();i++){
-            if(!this.list.get(i).isEmpty()){
+        for (Layer layer : this.list) {
+            if (!layer.isEmpty()) {
                 return false;
             }
         }

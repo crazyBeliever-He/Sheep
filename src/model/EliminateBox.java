@@ -14,24 +14,17 @@ import java.util.stream.Collectors;
  */
 public class EliminateBox {
 
-    /**
-     * 存放被点击的牌的数据
-     */
     private static List<Card> slot = new ArrayList<>();
 
-    /**
-     * gameOver的一个参考
-     */
     final static int SEVEN =7;
 
     /**
      * 消除区添加卡牌
      * @param card 向消除区添加的卡牌
      */
-    public void addSlot(Card card){
-
+    public void addToSlot(Card card){
         slot.add(card);
-
+        revokeCard=card;
         //吞掉作用在消除框中卡牌上的鼠标点击事件->消除区域框里图形无法点击
         MouseListener[] mouseListeners = card.getMouseListeners();
         if (mouseListeners!=null){
@@ -40,7 +33,7 @@ public class EliminateBox {
             }
         }
 
-        //牌的排序
+        //牌的重新排序
         slot.sort(Comparator.comparing(Card::getName));
 
         //获取牌的名称,根据牌的名字进行消除，方法：获取牌的名字及所有同名牌对象，牌名为Map的键，同名牌对象存在list中作为对应值
@@ -57,7 +50,7 @@ public class EliminateBox {
         //每次加牌后都要重绘以及判断是否游戏失败/成功
         paint();
         //判断游戏是否失败（判断游戏是否成功写在了Map中，在Card的鼠标点击中执行）
-        gameOver(card);
+        gameOver();
     }
 
     /**
@@ -74,29 +67,46 @@ public class EliminateBox {
         }
     }
 
+    private static Card revokeCard;
+
+    /**
+     * 撤销操作中EliminateBox中应有的操作
+     */
+    public static void boxRevoke(){
+        slot.remove(revokeCard);
+        revokeCard.getParent().remove(revokeCard);
+        paint();
+    }
+
     /**
      * 每次向消除区添加牌之后都要重绘消除区
      */
-    private void paint(){
+    public static void paint(){
         for (int i = 0; i < slot.size(); i++) {
             Card card=slot.get(i);
-
             //牌在消除框的位置
             int x=i*card.getWidth()+10;
-
             //消除区域牌的布局
-            card.setBounds(x,600,50,50);
+            card.setBounds(x,525,50,50);
         }
     }
 
     /**
      * 判断游戏是否失败
      */
-    private void gameOver(Card card){
+    private void gameOver(){
         if(slot.size()>=SEVEN){
             JOptionPane.showMessageDialog(null,"游戏结束,你输了！");
             System.exit(0);
         }
 
+    }
+
+    public static List<Card> getSlot() {
+        return slot;
+    }
+
+    public static void setSlot(List<Card> slot) {
+        EliminateBox.slot = slot;
     }
 }

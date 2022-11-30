@@ -1,5 +1,7 @@
 package model;
 
+import view.Start;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
@@ -30,25 +32,16 @@ public class Card extends JComponent {
     private Integer y;
     private Integer width;
     private Integer height;
-
     private Cell cell;
-
-    EliminateBox eliminateBox=new EliminateBox();
-
-
-    private String bj="background";
-    private String eb="eliminateBox";
+    static private final String BJ ="background";
+    static private final String EB ="eliminateBox";
     public Card(String name){
         this.name = name;
-
         this.image=Toolkit.getDefaultToolkit().getImage("picture\\"+name+".png");
         this.grayImage=Toolkit.getDefaultToolkit().getImage("picture\\"+name+"_gray.png");
-
         this.isGray=false;
-
         this.height=50;
         this.width=50;
-
         this.x=0;
         this.y=0;
         /*
@@ -60,26 +53,28 @@ public class Card extends JComponent {
 
                 Card card=(Card)e.getSource();//获取当前组件
 
-                if(card.getGray()|| bj.equals(card.getName()) ||eb.equals(card.getName())){
-                    //灰色,什么都不做
-                    //点到背景，消除框也是什么都不做
+
+                if(card.getGray()|| BJ.equals(card.getName()) ||EB.equals(card.getName())){
+                    //灰色,什么都不做，点到背景，消除框也是什么都不做
                     return;
                 }else{
-                    //问题:通过parent.remove只是在窗口中删除了该card对象,但是cell中状态state和card并没有删除
-                    //card.getParent().remove(card);//调用上层容器删除自己。通过父容器删掉自己（一般树形使用这样的方式）
 
                     //删除牌-> 将牌移动到消除框
                     //很多限制条件在消除框中执行
-                    eliminateBox.addSlot(card);
+                    Map.eliminateBox.addToSlot(card);
+
+                    //保留最近点击的卡牌的数据
+                    Start.revokeCell=card.getCell();
+                    Start.revokeCard=new Card(card.getName());
                     //解决问题：既要删除UI中的组件，也要删除数据模型中的数据和对应状态
                     //所以在card类中添加了新的属性：cell，内容是包含了自身的哪个cell
-                    cell.setState(false);
-                    cell.setCard(null);
+                    card.getCell().setState(false);
+                    card.getCell().setCard(null);
 
                     //这里需要 重新判定 整个Map中 哪些牌 需要 置灰;暂时将map设置为静态变量，然后通过包名+类名访问
                     view.Start.map.compareAll();
 
-                    //检查是否赢了
+                    //检查是否赢了，判断游戏失败的方法在EliminateBox里面
                     view.Start.map.ifWin();
                 }
             }
