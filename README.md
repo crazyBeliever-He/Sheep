@@ -1,2 +1,2 @@
 #羊了个羊
-just a game by java
+just a game made by java
