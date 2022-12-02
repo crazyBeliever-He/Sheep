@@ -11,7 +11,8 @@ import java.util.Random;
 public class CardTool {
     static Random random=new Random();
     public static String[] cardNames={
-            "carrot","corn","grass","fire","bottle"
+           "bottle","brush","bucket","cabbage","carrot","corn","fire",
+            "fork","gloves","grass","meat","scissors","straw","wool",
     };
     /**
      *  getCardName 每次调用随机获取牌的名字

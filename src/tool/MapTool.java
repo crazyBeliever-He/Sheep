@@ -16,38 +16,26 @@ import java.util.List;
  */
 public class MapTool {
     public static Map buildMap(int levels) {
-
         Map map=new Map();
         map.setLevels(levels);
-
         /*
           在绝对布局中，同样位置，先加入的组件展示在最上层，后加入的在下面
           和现实当中的直觉相反（直觉：后加入的应该在上层）
          */
-
         List<Layer> layers=new ArrayList<>();
         for(int i=0;i<levels;i++){
             layers.add(LayerTool.buildLayer(3,5));
         }
-
+        //构建图层的链式关系,第一层的parent默认为空，等价于，parent为空，说明已经到顶层，循环/递归结束
         layers.get(0).setParent(null);
         for(int i=1;i<layers.size();i++){
             layers.get(i).setParent(layers.get(i-1));
         }
 
-        for(int i=0;i<layers.size();i++){
-            map.getList().add(layers.get(i));
+        for (Layer layer : layers) {
+            map.getList().add(layer);
         }
 
-        ////这里要修改，应该由传入的levels来确定生成的层数！！！！！！！！！！！！！！！！！！
-//        Layer layer1 = LayerTool.buildLayer(3,3);
-//        Layer layer2 = LayerTool.buildLayer(3,3);
-        //构建图层的链式关系,第一层的parent默认为空，等价于，parent为空，说明已经到顶层，循环/递归结束
-//        layer2.setParent(layer1);
-//        layer1.setParent(null);
-//
-//        map.getList().add(layer1);
-//        map.getList().add(layer2);
 
         return map;
     }

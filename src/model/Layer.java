@@ -27,7 +27,6 @@ public class Layer {
      * 当前牌数 牌添加和减少时需要修改该值
      * */
     private int largestNumber;
-
     private int preNumber;
 
     /**
@@ -41,12 +40,15 @@ public class Layer {
      */
     private Cell[][] cells;
 
+    private static final int CORRECT=3;
+
     public Layer(int rowNum,int columnNum)throws Exception{
         this.rowNumber=rowNum;
         this.columnNumber=columnNum;
         this.largestNumber=rowNum*columnNum;
 
-        if(this.largestNumber%3!=0){
+
+        if(this.largestNumber%CORRECT!=0){
             throw new Exception("容量出错！！！");
         }
 
@@ -62,16 +64,14 @@ public class Layer {
      * 输出该层卡牌数据
      */
     public void showCells(){
-        for (int row = 0; row < cells.length; row++) {
-            for(int column=0;column<cells[row].length;column++){
-
-                Card card=cells[row][column].getCard();
-                if(card!=null){
-                    System.out.print(card.getName()+" ");
-                }else{
+        for (Cell[] cell : cells) {
+            for (Cell value : cell) {
+                Card card = value.getCard();
+                if (card != null) {
+                    System.out.print(card.getName() + " ");
+                } else {
                     System.out.print("NULL ");
                 }
-
             }
             System.out.println();
         }

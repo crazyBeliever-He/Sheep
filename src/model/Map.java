@@ -16,8 +16,20 @@ import java.util.List;
 public class Map {
     private int levels;
     private List<Layer> list=new ArrayList<>();
-
     public static EliminateBox eliminateBox=new EliminateBox();
+    public static Layer remove;
+    static {
+        try {
+            remove = new Layer(1,6);
+            Cell [][]temp=remove.getCells();
+            for(int i=0;i<temp[0].length;i++){
+                temp[0][i]=new Cell();
+            }
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     /**
      *  方法compareAll的作用：
@@ -40,14 +52,13 @@ public class Map {
             Cell[][] cells=layer.getCells();
 
             //遍历该层的Cell，判断是否有含牌的cell遮住了正在查找的card
-            for (int row = 0; row < cells.length; row++) {
-                for(int column=0;column<cells[row].length;column++){
+            for (Cell[] value : cells) {
+                for (Cell cell : value) {
 
-                    Cell cell=cells[row][column];
-                    if(cell.isState()){
+                    if (cell.isState()) {
                         //该空间有牌，需要判定
-                        Card card=cell.getCard();
-                        boolean result= compare(card,layer.getParent());
+                        Card card = cell.getCard();
+                        boolean result = compare(card, layer.getParent());
 
                         //写入该牌是否要置灰
                         card.setGray(result);
@@ -68,19 +79,18 @@ public class Map {
     public  boolean compare(Card card, Layer layer){
 
         Cell[][] cells=layer.getCells();
-        for (int row = 0; row < cells.length; row++) {
-            for(int column=0;column<cells[row].length;column++){
+        for (Cell[] value : cells) {
+            for (Cell cell : value) {
 
                 //如果当前牌单元格为空，不用比较
-                Cell cell=cells[row][column];
-                if(cell.isState()){
+                if (cell.isState()) {
                     //单元格有牌，需要比较
                     //temp 上级图层中的牌的属性; rect 当前牌属性; result 遮盖判定
-                    Rectangle temp=cell.getCard().getBounds();
-                    Rectangle rect=card.getBounds();
-                    boolean result=rect.intersects(temp);
+                    Rectangle temp = cell.getCard().getBounds();
+                    Rectangle rect = card.getBounds();
+                    boolean result = rect.intersects(temp);
 
-                    if(result){
+                    if (result) {
                         //有交集，当前牌被盖住了.return结束整个判定
                         return true;
                     }
@@ -101,7 +111,7 @@ public class Map {
      * 判断游戏是否赢了
      */
     public void ifWin(){
-        if(view.Start.map.isEmpty()){
+        if(view.Start.gameMap.isEmpty()){
             JOptionPane.showMessageDialog(null,"游戏结束,你赢了！");
             System.exit(0);
         }
@@ -120,12 +130,13 @@ public class Map {
         return true;
     }
 
+
     /**
      * 输出cell状态用的（是否有牌
      */
     public void state(){
-        for(int i=0;i<this.list.size();i++){
-            this.list.get(i).state();
+        for (Layer layer : this.list) {
+            layer.state();
             System.out.println();
         }
     }

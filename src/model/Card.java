@@ -72,10 +72,11 @@ public class Card extends JComponent {
                     card.getCell().setCard(null);
 
                     //这里需要 重新判定 整个Map中 哪些牌 需要 置灰;暂时将map设置为静态变量，然后通过包名+类名访问
-                    view.Start.map.compareAll();
+                    view.Start.gameMap.compareAll();
 
-                    //检查是否赢了，判断游戏失败的方法在EliminateBox里面
-                    view.Start.map.ifWin();
+                    //检查是否赢了
+                    view.Start.gameMap.ifWin();
+
                 }
             }
         });

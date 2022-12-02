@@ -1,12 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="ab802fd0-a6e7-48de-94f5-53d37801fa8e" name="变更" comment="sheep">
+      <change afterPath="$PROJECT_DIR$/picture/brush.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/picture/brush_gray.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/picture/bucket.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/picture/bucket_gray.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/picture/cabbage.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/picture/cabbage_gray.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/picture/fork.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/picture/fork_gray.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/picture/gloves .png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/picture/gloves_gray.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/picture/meat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/picture/meat_gray.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/picture/scissors.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/picture/scissors_gray .png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/picture/straw.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/picture/straw_gray.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/picture/wool .png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/picture/wool _gray.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Card.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/EliminateBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/EliminateBox.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Layer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Layer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tool/CardTool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool/CardTool.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tool/MapTool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool/MapTool.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Start.java" afterDir="false" />
     </list>
@@ -28,6 +50,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="2H1hqUS8mNtLf6rbLpOv168sdLQ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -46,10 +71,15 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/111/桌面/JavaCode/GameSheep&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;project.structure.last.edited&quot;: &quot;项目&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;yiiguxing.plugin.translate&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;yiiguxing.plugin.translate&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -100,7 +130,15 @@
       <workItem from="1669788398669" duration="55000" />
       <workItem from="1669793922712" duration="17000" />
       <workItem from="1669795377717" duration="14156000" />
-      <workItem from="1669815227005" duration="9000" />
+      <workItem from="1669815227005" duration="173000" />
+      <workItem from="1669817440241" duration="637000" />
+      <workItem from="1669873219440" duration="2406000" />
+      <workItem from="1669875685809" duration="4016000" />
+      <workItem from="1669892633159" duration="1456000" />
+      <workItem from="1669963513812" duration="3177000" />
+      <workItem from="1669966774531" duration="3834000" />
+      <workItem from="1669970756085" duration="6945000" />
+      <workItem from="1669982909827" duration="357000" />
     </task>
     <task id="LOCAL-00001" summary="sheep">
       <created>1667550862599</created>
@@ -158,7 +196,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668577832843</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="sheep">
+      <created>1669815246134</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1669815246134</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,6 +224,17 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="sheep" />
     <option name="LAST_COMMIT_MESSAGE" value="sheep" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/model/EliminateBox.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
