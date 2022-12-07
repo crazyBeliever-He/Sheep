@@ -24,7 +24,7 @@ public class MapTool {
          */
         List<Layer> layers=new ArrayList<>();
         for(int i=0;i<levels;i++){
-            layers.add(LayerTool.buildLayer(3,5));
+            layers.add(LayerTool.buildLayer(6,6));
         }
         //构建图层的链式关系,第一层的parent默认为空，等价于，parent为空，说明已经到顶层，循环/递归结束
         layers.get(0).setParent(null);

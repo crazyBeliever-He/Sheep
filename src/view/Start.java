@@ -64,6 +64,8 @@ public class Start extends JFrame {
         colourMap();
         //绘制背景和消除框，后加载的图片显示在下面
         setBackground();
+
+        this.setVisible(true);
     }
 
 
@@ -102,7 +104,6 @@ public class Start extends JFrame {
 
             }
         }
-        layer.showCells();
     }
     /**
      * @param layer 道具layer

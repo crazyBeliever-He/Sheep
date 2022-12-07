@@ -53,12 +53,12 @@ public class Card extends JComponent {
 
                 Card card=(Card)e.getSource();//获取当前组件
 
-
                 if(card.getGray()|| BJ.equals(card.getName()) ||EB.equals(card.getName())){
                     //灰色,什么都不做，点到背景，消除框也是什么都不做
                     return;
                 }else{
 
+                    System.out.println(card.getName()+"被点击");
                     //删除牌-> 将牌移动到消除框
                     //很多限制条件在消除框中执行
                     Map.eliminateBox.addToSlot(card);

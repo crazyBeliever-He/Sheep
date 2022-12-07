@@ -85,10 +85,15 @@ public class EliminateBox {
 
         ArrayList<String> three=new ArrayList<>();
         if(remove==1 || revive){
-            //remove是是上移，revive是复活
-            remove=0;
-            revive=false;
-        }else{
+            //remove是是上移,revive是复活
+            if(revive){
+
+                revive=false;
+            }else{
+                remove=0;
+            }
+
+        } else{
             JOptionPane.showMessageDialog(null,"你的次数用完了,请充值！");
             return three;
         }
@@ -127,6 +132,7 @@ public class EliminateBox {
                         JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE,null,options,options[0]);
                 if(rs==0){
                     revive=true;
+                    //这里需要优化，关于复活的机制问题——复活的实现，
 
                 }else if(rs==1){
                     JOptionPane.showMessageDialog(null,"游戏结束,你输了!");
