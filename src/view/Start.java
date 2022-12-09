@@ -2,7 +2,6 @@ package view;
 
 import model.*;
 import tool.MapTool;
-
 import javax.swing.*;
 import java.awt.*;
 import java.util.LinkedList;

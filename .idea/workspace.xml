@@ -5,18 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ab802fd0-a6e7-48de-94f5-53d37801fa8e" name="变更" comment="sheep">
-      <change afterPath="$PROJECT_DIR$/picture/gloves.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/picture/scissors_gray.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/picture/wool.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/picture/wool_gray.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/picture/gloves .png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/picture/scissors_gray .png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/picture/wool .png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/picture/wool _gray.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/EliminateBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/EliminateBox.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tool/MapTool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool/MapTool.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Start.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -126,6 +115,7 @@
       <workItem from="1669966774531" duration="3834000" />
       <workItem from="1669970756085" duration="6945000" />
       <workItem from="1669982909827" duration="1246000" />
+      <workItem from="1670406237548" duration="296000" />
     </task>
     <task id="LOCAL-00001" summary="sheep">
       <created>1667550862599</created>
@@ -197,7 +187,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669983364817</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="sheep">
+      <created>1670406269631</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1670406269631</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
