@@ -2,10 +2,13 @@ package view;
 
 import model.*;
 import tool.MapTool;
+
 import javax.swing.*;
 import java.awt.*;
+
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 
@@ -19,15 +22,18 @@ public class Start extends JFrame {
      * 每局游戏的入口
      */
     public static void main(String[] args) {
+
+        //难度检测,一个方法，放在第二个线程中
         new Start();
     }
+
 
     /**
      * 这里更改地图数据（难度）
      * <p>
      * 生成地图数据
      */
-    public static Map gameMap = MapTool.buildMap(3);
+    public static myMap gameMap = MapTool.buildMap(3);
 
 
     /**
@@ -39,6 +45,8 @@ public class Start extends JFrame {
         //2.自动刷新
         autoRefresh();
     }
+
+
     /**
      * 创建简单窗口
      */
@@ -66,8 +74,6 @@ public class Start extends JFrame {
 
         this.setVisible(true);
     }
-
-
     /**
      * 绘制地图
      */
@@ -76,7 +82,7 @@ public class Start extends JFrame {
         for (Layer layer : list) {
             colourLayer(layer);
         }
-       colourRemove(Map.remove);
+       colourRemove(myMap.remove);
         //置灰判定
         gameMap.compareAll();
     }
@@ -122,7 +128,7 @@ public class Start extends JFrame {
     /**
      * 重新绘制游戏界面
      */
-    public void recolour(){
+    public  void recolour(){
         colourMap();
         reSetBackground();
     }
@@ -170,7 +176,6 @@ public class Start extends JFrame {
         this.getContentPane().add(revoke);
         this.getContentPane().add(remove);
     }
-
     /**
      * 功能——打乱
      * <p>
@@ -224,8 +229,6 @@ public class Start extends JFrame {
         //重绘
         recolour();
     }
-
-
     public static Cell revokeCell;
     public static Card revokeCard;
     /**
@@ -236,20 +239,18 @@ public class Start extends JFrame {
      *     目前只实现了连续一次的撤销，连续多次的撤销有需要的话可以实现，把存储记录做多一点就好了
      */
     private void revoke(){
-        List<Card> slot=Map.eliminateBox.getSlot();
+        List<Card> slot= myMap.eliminateBox.getSlot();
         if(slot.isEmpty()||EliminateBox.revokeCard==null){
             JOptionPane.showMessageDialog(null,"没有可以撤销的卡牌");
             return;
         }
-        Map.eliminateBox.boxRevoke();
+        myMap.eliminateBox.boxRevoke();
         revokeCell.setState(true);
         revokeCell.setCard(revokeCard);
         revokeCard.setCell(revokeCell);
         //重绘
         recolour();
     }
-
-
     /**
      * 功能——上移/复活
      * <p>
@@ -260,8 +261,8 @@ public class Start extends JFrame {
     public void remove(){
         //专门构建一层Layer供上移和撤销使用
         //这里有bug，但是只要上移和复活道具只能使用一次就不会出现bug
-        Layer layer= Map.remove;
-        EliminateBox eliminateBox=Map.eliminateBox;
+        Layer layer= myMap.remove;
+        EliminateBox eliminateBox= myMap.eliminateBox;
 
         List<String> temp=eliminateBox.boxRemove();
         Cell [][] special=layer.getCells();
@@ -282,6 +283,26 @@ public class Start extends JFrame {
     }
 
 
+    public void degreeOfDifficulty(){
+        List<Layer> layer=gameMap.getList();
+        int total=0;
+
+        for(int i=0;i<layer.size();i++){
+            Cell[][] cell=layer.get(i).getCells();
+
+            for(int j=0;j<cell.length;j++){
+                for(int k=0;k<cell[j].length;k++){
+
+                    if(cell[j][k].isState() && !cell[j][k].getCard().getGray()){
+                        total++;
+
+                    }
+                }
+            }
+        }
+
+    }
+
     /**
      * 每隔40ms重绘窗口
      */
@@ -291,9 +312,15 @@ public class Start extends JFrame {
         new Thread(() -> {
             while(true){
                 start.repaint();
+
+                //这个if是复活的判断
                 if(EliminateBox.revive){
                     remove();
                 }
+
+                //添加一个难度度量
+
+
                 try{
                     Thread.sleep(40);
                 }catch(InterruptedException e){

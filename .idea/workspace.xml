@@ -6,6 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="ab802fd0-a6e7-48de-94f5-53d37801fa8e" name="变更" comment="sheep">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/EliminateBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/EliminateBox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/myMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/TestBuildMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/TestBuildMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/TestColourMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/TestColourMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tool/MapTool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tool/MapTool.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Start.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,6 +27,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -116,6 +123,11 @@
       <workItem from="1669970756085" duration="6945000" />
       <workItem from="1669982909827" duration="1246000" />
       <workItem from="1670406237548" duration="296000" />
+      <workItem from="1670602685648" duration="584000" />
+      <workItem from="1670758169491" duration="325000" />
+      <workItem from="1670998809438" duration="797000" />
+      <workItem from="1671001015299" duration="1136000" />
+      <workItem from="1671003183158" duration="4380000" />
     </task>
     <task id="LOCAL-00001" summary="sheep">
       <created>1667550862599</created>
@@ -194,7 +206,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670406269631</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="sheep">
+      <created>1670602719551</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1670602719551</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,7 +240,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/model/EliminateBox.java</url>
-          <line>61</line>
+          <line>62</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

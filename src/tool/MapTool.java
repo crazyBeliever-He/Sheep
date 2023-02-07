@@ -1,7 +1,6 @@
 package tool;
 
-import model.Map;
-import model.Layer;
+import model.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,8 +14,8 @@ import java.util.List;
  * @author 教徒
  */
 public class MapTool {
-    public static Map buildMap(int levels) {
-        Map map=new Map();
+    public static myMap buildMap(int levels) {
+        myMap map=new myMap();
         map.setLevels(levels);
         /*
           在绝对布局中，同样位置，先加入的组件展示在最上层，后加入的在下面
@@ -35,8 +34,7 @@ public class MapTool {
         for (Layer layer : layers) {
             map.getList().add(layer);
         }
-
-
         return map;
     }
+
 }

@@ -16,7 +16,7 @@ import java.util.List;
  */
 public class TestColourMap extends JFrame {
 
-        public static Map map= MapTool.buildMap(2);
+        public static myMap map= MapTool.buildMap(2);
 
        // private Layer layer= LayerTool.buildLayer(3,3);
 

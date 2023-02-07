@@ -1,7 +1,7 @@
 package test;
 
 import model.Layer;
-import model.Map;
+import model.myMap;
 import tool.LayerTool;
 
 import java.util.List;
@@ -16,7 +16,7 @@ public class TestBuildMap {
 
     public static void main(String[] args) {
 
-        Map map=new Map();
+        myMap map=new myMap();
 
         map.setLevels(3);
 

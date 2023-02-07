@@ -58,10 +58,10 @@ public class Card extends JComponent {
                     return;
                 }else{
 
-                    System.out.println(card.getName()+"被点击");
+                    //System.out.println(card.getName()+"被点击");
                     //删除牌-> 将牌移动到消除框
                     //很多限制条件在消除框中执行
-                    Map.eliminateBox.addToSlot(card);
+                    myMap.eliminateBox.addToSlot(card);
 
                     //保留最近点击的卡牌的数据
                     Start.revokeCell=card.getCell();

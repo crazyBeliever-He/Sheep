@@ -13,7 +13,7 @@ import java.util.List;
  * 在创建一个Map对象时，各种卡牌数据就已经生成了
  * @author 教徒
  */
-public class Map {
+public class myMap {
     private int levels;
     private List<Layer> list=new ArrayList<>();
     public static EliminateBox eliminateBox=new EliminateBox();
@@ -129,6 +129,7 @@ public class Map {
         }
         return true;
     }
+
 
 
     /**
